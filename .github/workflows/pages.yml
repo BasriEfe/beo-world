@@ -25,6 +25,7 @@ jobs:
           unzip -q beo-pages-gallery.zip -d _site
           python3 patch/apply.py _site
           python3 patch/u5.py _site
+          if [ -f patch/proje5-oncesi.jpg ] && [ -f patch/Proje5-sonrasi.jpg ]; then python3 patch/u6.py _site; cp patch/proje5-oncesi.jpg _site/assets/projects/p5-once.jpg; cp patch/Proje5-sonrasi.jpg _site/assets/projects/p5-sonra.jpg; fi
           test -f _site/index.html
           test -f _site/404.html
           test -f _site/assets/projects/berber-video.mp4
